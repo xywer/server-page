@@ -18,7 +18,7 @@
     },
     "repository": {
         "type": "git",
-        "url": "https://github.com/xywer/server-page.git"
+        "url": "https://github.com/xywer/server-page"
     },
     "keywords": [
         "node",
