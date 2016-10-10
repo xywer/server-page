@@ -18,3 +18,9 @@ app.listen(app.get('port'), function() {
 });
 
 
+app.get('/personaInformacionAll', function (req, res, next) {
+//    SELECT * FROM  persona_catalogo ORDER BY id DESC
+
+        res.json("ALEX");
+
+});
