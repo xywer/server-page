@@ -33,11 +33,11 @@ var connection = mysql.createConnection(params_bdd);
 //---END PERSONA--
 connection.connect(function (err) {
     if (err) {
-        console.log('Error connecting to Db');
+        console.log('---------------------------------------Error connecting to Db------------------');
         return;
     } else {
 
-        console.log('Connection established');
+        console.log('----------------------Connection established--------------------------');
     }
 
 });
