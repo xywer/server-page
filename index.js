@@ -1,4 +1,27 @@
 
+//PUERTO DONDE VA A CORRER EL SERVIDOR 
+//WEB SERVICES
+////
+//****************CORS **************
+//https://github.com/expressjs/cors
+// ES UN MODULO PARA PODER DAR PERMISOS
+//DE ACCESO AL SERVIDOR
+//Y PODER 
+//***********************EXPRESS*****************
+//En esta introducci�n a la programaci�n as�ncrona con Node.js 
+//vamos a introducirnos en el desarrollo web con express.js. 
+//  Express est� construido sobre Connect un framework extensible de 
+//  manejo de servidores HTTP que provee de
+//plugins de alto rendimiento conocidos como middleware.
+//---------VARIABLES GLOBALES----------
+
+var port_listen = 6969;
+var port_mysql = 3306;
+var puerto_io = 3000;
+//----------ASIGNAR LA CONFIGURACION DE LA BDD(NOMBRE Y PUERTO Y PASS)---------
+var params_bdd = {user: "pekesc5_meetclic", password: "meetclic@", host: "creativeweb.com.ec", port: port_mysql, database: "pekesc5_xywer"};
+//var params_bdd = {user: "pekesc5_meetclic", password: "meetclic@", host: "creativeweb.com.ec", port: port_mysql, database: "pekesc5_lady"};
+//*********************MYSQL*****************
 
 var express = require('express');
 var app = express();
