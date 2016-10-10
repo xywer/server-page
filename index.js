@@ -22,7 +22,9 @@ var puerto_io = 3000;
 var params_bdd = {user: "pekesc5_meetclic", password: "meetclic@", host: "creativeweb.com.ec", port: port_mysql, database: "pekesc5_xywer"};
 //var params_bdd = {user: "pekesc5_meetclic", password: "meetclic@", host: "creativeweb.com.ec", port: port_mysql, database: "pekesc5_lady"};
 //*********************MYSQL*****************
-
+//-------------------INIT MODULOS A UTILIZAR-------------
+//MODULO DE NODE JS PARA LA CONECCION DE LA BDD DE MYSQL
+var mysql = require('mysql');//para la comunicacion con la bdd 
 var express = require('express');
 var app = express();
 
