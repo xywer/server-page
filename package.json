@@ -1,0 +1,31 @@
+{
+    "name": "Node Expre",
+    "version": "0.2.5",
+    "description": "A sample Node.js app using Express 4",
+    "engines": {
+        "node": "5.9.1"
+    },
+    "main": "index.js",
+    "scripts": {
+        "start": "node index.js"
+    },
+    "dependencies": {
+        "ejs": "2.4.1",
+        "express": "4.13.3",
+        "socket.io": "*",
+        "mysql": "*",
+        "cors": "*"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/xywer/server-page.git"
+    },
+    "keywords": [
+        "node",
+        "heroku",
+        "express",
+        "cors",
+        "mysql"
+    ],
+    "license": "MIT"
+}
