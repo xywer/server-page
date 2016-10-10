@@ -30,7 +30,17 @@ var app = express();
 //--------init CONECCCION DE LA BDD--------
 var connection = mysql.createConnection(params_bdd);
 //--------end CONECCCION DE LA BDD--------
+//---END PERSONA--
+connection.connect(function (err) {
+    if (err) {
+        console.log('Error connecting to Db');
+        return;
+    } else {
 
+        console.log('Connection established');
+    }
+
+});
 app.set('port', (process.env.PORT || 5000));
 
 app.use(express.static(__dirname + '/public'));
