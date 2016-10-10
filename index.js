@@ -18,8 +18,8 @@ var io = require('socket.io').listen(puerto_io);//REALIZA UN PUENTE ENTRE TU APP
 //--------CONECCCION DE LA BDD--------
 var connection = mysql.createConnection(params_bdd);
 
-var express = require('express');
-var app = express();
+//var express = require('express');
+//var app = express();
 
 app.set('port', (process.env.PORT || 5000));
 
