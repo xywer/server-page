@@ -27,6 +27,9 @@ var params_bdd = {user: "pekesc5_meetclic", password: "meetclic@", host: "creati
 var mysql = require('mysql');//para la comunicacion con la bdd 
 var express = require('express');
 var app = express();
+//--------init CONECCCION DE LA BDD--------
+var connection = mysql.createConnection(params_bdd);
+//--------end CONECCCION DE LA BDD--------
 
 app.set('port', (process.env.PORT || 5000));
 
