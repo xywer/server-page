@@ -1,5 +1,5 @@
 {
-  "name": "node-js-getting-started",
+  "name": "Maldy Server",
   "version": "0.2.5",
   "description": "A sample Node.js app using Express 4",
   "engines": {
@@ -13,7 +13,8 @@
     "ejs": "2.4.1",
     "express": "4.13.3",
     "socket-io": "*",
-    "mysql": "*"
+    "mysql": "*",
+    "cors": "*"
   },
   "repository": {
     "type": "git",
