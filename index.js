@@ -31,6 +31,7 @@ if (process.env.PORT) {
     port_listen = process.env.PORT;
     console.log("puerto a ejecutar",port_listen);
 }
+console.log("--------------puerto configurado-------------",port_listen);
 app.set('port',port_listen);
 
 app.use(express.static(__dirname + '/public'));
@@ -50,10 +51,7 @@ app.listen(app.get('port'), function () {
 
 
 app.get('/personaInformacionAll', function (req, res, next) {
-//    SELECT * FROM  persona_catalogo ORDER BY id DESC
-
     res.json("ALEX");
-
 });
 
 function initConection() {
