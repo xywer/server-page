@@ -10,13 +10,7 @@
         "start": "node index.js"
     },
     "dependencies": {
-        "johnny-five": "latest",
-        "serialport": "1.4.10",
-        "ejs": "2.4.1",
-        "express": "4.13.3",
-        "socket-io": "*",
-        "mysql": "*",
-        "cors": "*"
+
     },
     "repository": {
         "type": "git",
