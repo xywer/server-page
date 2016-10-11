@@ -18,29 +18,16 @@
 var port_listen = 6969;
 var port_mysql = 3306;
 var puerto_io = 3000;
+var connection;//objeto para la coneccion
 //----------ASIGNAR LA CONFIGURACION DE LA BDD(NOMBRE Y PUERTO Y PASS)---------
 var params_bdd = {user: "pekesc5_meetclic", password: "meetclic@", host: "creativeweb.com.ec", port: port_mysql, database: "pekesc5_xywer"};
-//var params_bdd = {user: "pekesc5_meetclic", password: "meetclic@", host: "creativeweb.com.ec", port: port_mysql, database: "pekesc5_lady"};
 //*********************MYSQL*****************
 //-------------------INIT MODULOS A UTILIZAR-------------
 //MODULO DE NODE JS PARA LA CONECCION DE LA BDD DE MYSQL
 var mysql = require('mysql');//para la comunicacion con la bdd 
 var express = require('express');
 var app = express();
-//--------init CONECCCION DE LA BDD--------
-var connection = mysql.createConnection(params_bdd);
-//--------end CONECCCION DE LA BDD--------
-//---END PERSONA--
-connection.connect(function (err) {
-    if (err) {
-        console.log('---------------------------------------Error connecting to Db------------------',err);
-        return;
-    } else {
 
-        console.log('----------------------Connection established--------------------------');
-    }
-
-});
 app.set('port', (process.env.PORT || 5000));
 
 app.use(express.static(__dirname + '/public'));
@@ -49,18 +36,36 @@ app.use(express.static(__dirname + '/public'));
 app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
 
-app.get('/', function(request, response) {
-  response.render('pages/index');
+app.get('/', function (request, response) {
+    response.render('pages/index');
 });
 
-app.listen(app.get('port'), function() {
-  console.log('Node app is running on port', app.get('port'));
+app.listen(app.get('port'), function () {
+    console.log('Node app is running on port', app.get('port'));
 });
 
 
 app.get('/personaInformacionAll', function (req, res, next) {
 //    SELECT * FROM  persona_catalogo ORDER BY id DESC
 
-        res.json("ALEX");
+    res.json("ALEX");
 
 });
+
+function initConection() {
+    //--------init CONECCCION DE LA BDD--------
+    var connection = mysql.createConnection(params_bdd);
+//--------end CONECCCION DE LA BDD--------
+//---END PERSONA--
+    connection.connect(function (err) {
+        if (err) {
+            console.log('---------------------------------------Error connecting to Db------------------', err);
+            return;
+        } else {
+
+            console.log('----------------------Connection established--------------------------');
+        }
+
+    });
+    connection.end();
+}
