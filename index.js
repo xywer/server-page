@@ -52,14 +52,12 @@ app.listen(app.get('port'), function () {
 //TABLAS GESTION NAMES
 var tbl_persona = "persona";
 var tbl_persona_informacion = "persona_informacion";
-
+initConection();
 app.get('/personaInformacionAll', function (req, res, next) {
 
-//    connection = initConection();
-//    if (connection) {//se creo la conexion
-//        var query_string = "SELECT * FROM  " + tbl_persona + " t  ";
-//        var objec_conection_bdd = connection;
-//        var params_data = {query_string: query_string, objec_conection_bdd: objec_conection_bdd};
+    var query_string = "SELECT * FROM  " + tbl_persona + " t  ";
+    var objec_conection_bdd = connection;
+    var params_data = {query_string: query_string, objec_conection_bdd: objec_conection_bdd};
 //        getDataModel(params_data, function (data) {
 //
 //            if (data.length == 0) {
@@ -71,41 +69,36 @@ app.get('/personaInformacionAll', function (req, res, next) {
 //            }
 //
 //        });
-//    } else {
-//        res.json({success: false, "msj": "No se pudo realizar la coneccion"});
-//    }
+
+    res.json({success: false, "msj": "No se pudo realizar la coneccion"});
 
 });
 
 function initConection() {
     //--------init CONECCCION DE LA BDD--------
-    var object = {};
-    object = mysql.createConnection(params_bdd);
-    object.connect(function (err) {
+    connection = mysql.createConnection(params_bdd);
+    connection.connect(function (err) {
         if (err) {
             console.log('---------------------------------------Error connecting to Db------------------', err);
-            return false;
         } else {
-
             console.log('----------------------Connection established--------------------------');
         }
 
     });
-    return object;
 }
-function closeBddVerificar(object) {
+function closeBddVerificar() {
 
-    object.on('close', function (err) {
+    connection.on('close', function (err) {
         if (err) {
             // Oops! Unexpected closing of connection, lets reconnect back.
-            object = mysql.createConnection(connection.config);
+            connection = mysql.createConnection(connection.config);
         } else {
             console.log('Connection closed normally.');
         }
     });
 }
-function closeBdd(object) {
-    object.end();
+function closeBdd() {
+    connection.end();
 }
 function getDataModel($params, callback) {
     var result;
