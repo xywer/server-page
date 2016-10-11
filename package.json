@@ -23,7 +23,9 @@
   "keywords": [
     "node",
     "heroku",
-    "express"
+    "express",
+    "cors",
+    "mysql"
   ],
   "license": "MIT"
 }
