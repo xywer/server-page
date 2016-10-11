@@ -14,8 +14,7 @@
 //  manejo de servidores HTTP que provee de
 //plugins de alto rendimiento conocidos como middleware.
 //---------VARIABLES GLOBALES----------
-
-var port_listen = 6969;
+var port_listen = 5000;
 var port_mysql = 3306;
 var puerto_io = 3000;
 var connection;//objeto para la coneccion
@@ -27,8 +26,12 @@ var params_bdd = {user: "pekesc5_meetclic", password: "meetclic@", host: "creati
 var mysql = require('mysql');//para la comunicacion con la bdd 
 var express = require('express');
 var app = express();
-
-app.set('port', (process.env.PORT || 5000));
+//---VERIFICAR SI EXISTE UN PUERTO--
+if (process.env.PORT) {
+    port_listen = process.env.PORT;
+    console.log("puerto a ejecutar",port_listen);
+}
+app.set('port',port_listen);
 
 app.use(express.static(__dirname + '/public'));
 
@@ -41,7 +44,7 @@ app.get('/', function (request, response) {
 });
 
 app.listen(app.get('port'), function () {
-    console.log('Node app is running on port', app.get('port'));
+    console.log('Node se ejecuta en el puerto', app.get('port'));
 });
 
 
