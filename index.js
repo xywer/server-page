@@ -44,7 +44,8 @@ app.get('/', function (request, response) {
 });
 
 app.listen(app.get('port'), function () {
-    console.log('Node se ejecuta en el puerto', app.get('port'));
+    console.log('--------------------NODE---------------------');
+    console.log('--------------------PUERTO---------------------', app.get('port'));
 });
 
 
