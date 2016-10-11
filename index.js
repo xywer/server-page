@@ -55,25 +55,25 @@ var tbl_persona_informacion = "persona_informacion";
 
 app.get('/personaInformacionAll', function (req, res, next) {
 
-    connection = initConection();
-    if (connection) {//se creo la conexion
-        var query_string = "SELECT * FROM  " + tbl_persona + " t  ";
-        var objec_conection_bdd = connection;
-        var params_data = {query_string: query_string, objec_conection_bdd: objec_conection_bdd};
-        getDataModel(params_data, function (data) {
-
-            if (data.length == 0) {
-                res.json({success: true, "msj": "Conecccion Valida", data: data});
-                closeBdd(connection);
-                closeBddVerificar(connection);
-            } else {
-
-            }
-
-        });
-    } else {
-        res.json({success: false, "msj": "No se pudo realizar la coneccion"});
-    }
+//    connection = initConection();
+//    if (connection) {//se creo la conexion
+//        var query_string = "SELECT * FROM  " + tbl_persona + " t  ";
+//        var objec_conection_bdd = connection;
+//        var params_data = {query_string: query_string, objec_conection_bdd: objec_conection_bdd};
+//        getDataModel(params_data, function (data) {
+//
+//            if (data.length == 0) {
+//                res.json({success: true, "msj": "Conecccion Valida", data: data});
+//                closeBdd(connection);
+//                closeBddVerificar(connection);
+//            } else {
+//
+//            }
+//
+//        });
+//    } else {
+//        res.json({success: false, "msj": "No se pudo realizar la coneccion"});
+//    }
 
 });
 
