@@ -12,11 +12,8 @@
     "dependencies": {
         "mysql": "*",
         "socket-io": "*",
-        "express": "4.13.3",
         "ejs": "2.4.1",
-        "johnny-five": "latest",
-        "serialport": "1.4.10"
-
+        "express": "4.13.3"
     },
     "repository": {
         "type": "git",
