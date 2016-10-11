@@ -46,7 +46,7 @@ app.get('/', function (request, response) {
 });
 //--------PUERTO DE CORRER--
 app.listen(app.get('port'), function () {
-    console.log('--------------------NODE---------------------');
+    console.log('--------------------NODE---------------');
     console.log('--------------------PUERTO---------------------', app.get('port'));
 });
 //TABLAS GESTION NAMES
