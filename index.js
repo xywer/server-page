@@ -27,12 +27,13 @@ var mysql = require('mysql');//para la comunicacion con la bdd
 var express = require('express');
 var app = express();
 //---VERIFICAR SI EXISTE UN PUERTO--
+//en PRODUCCION CAMBIA EL PUERTO DEFINIDO X UNO
 if (process.env.PORT) {
     port_listen = process.env.PORT;
-    console.log("puerto a ejecutar",port_listen);
+    console.log("puerto a ejecutar", port_listen);
 }
-console.log("--------------puerto configurado-------------",port_listen);
-app.set('port',port_listen);
+console.log("--------------puerto configurado-------------", port_listen);
+app.set('port', port_listen);
 
 app.use(express.static(__dirname + '/public'));
 
@@ -51,12 +52,13 @@ app.listen(app.get('port'), function () {
 
 
 app.get('/personaInformacionAll', function (req, res, next) {
+    initConection();
     res.json("ALEX");
 });
 
 function initConection() {
     //--------init CONECCCION DE LA BDD--------
-    var connection = mysql.createConnection(params_bdd);
+     connection = mysql.createConnection(params_bdd);
 //--------end CONECCCION DE LA BDD--------
 //---END PERSONA--
     connection.connect(function (err) {
