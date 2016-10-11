@@ -44,7 +44,7 @@ app.set('view engine', 'ejs');
 app.get('/', function (request, response) {
     response.render('pages/index');
 });
-
+//--------PUERTO DE CORRER--
 app.listen(app.get('port'), function () {
     console.log('--------------------NODE---------------------');
     console.log('--------------------PUERTO---------------------', app.get('port'));
