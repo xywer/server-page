@@ -53,6 +53,7 @@ app.listen(app.get('port'), function () {
 var tbl_persona = "persona";
 var tbl_persona_informacion = "persona_informacion";
 initConection();
+
 app.get('/personaInformacionAll', function (req, res, next) {
 
     var query_string = "SELECT * FROM  " + tbl_persona + " t  ";
