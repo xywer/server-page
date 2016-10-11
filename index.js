@@ -57,6 +57,7 @@ app.get('/personaInformacionAll', function (req, res, next) {
 
     var query_string = "SELECT * FROM  " + tbl_persona + " t  ";
     var objec_conection_bdd = connection;
+    console.log(connection);
     var params_data = {query_string: query_string, objec_conection_bdd: objec_conection_bdd};
 //        getDataModel(params_data, function (data) {
 //
